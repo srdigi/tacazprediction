@@ -5,11 +5,65 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tacaz Predictions 💖💖</title>
 
-<!-- META PIXEL (SAFE – NO VALUE / NO CURRENCY) -->
+<!-- META PIXEL (OPTIONAL & SAFE) -->
 <script>
-!function(f,b,e,v,n,t,s){
-if(f.fbq)return;
-n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;
-n.pus
+(function(){
+  var pixelId = 'YOUR_PIXEL_ID_HERE'; // agar pixel nahi hai to empty hi rehne do
+  if(!pixelId) return;
+
+  !function(f,b,e,v,n,t,s){
+    if(f.fbq)return;
+    n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];
+    t=b.createElement(e);t.async=!0;
+    t.src=v;
+    s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)
+  }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+  fbq('init', pixelId, {autoConfig:false});
+  fbq('track','PageView');
+})();
+</script>
+<!-- END PIXEL -->
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+
+body{
+background:#1f7fb2;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+color:#fff;
+}
+
+.container{
+width:100%;
+max-width:420px;
+padding:25px 18px;
+text-align:center;
+}
+
+.title{
+font-size:34px;
+font-weight:900;
+color:#ffeb3b;
+margin-bottom:14px;
+}
+
+.logo{
+width:120px;height:120px;border-radius:50%;
+background:#000;margin:0 auto 18px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+.logo img{width:100%;height:100%;object-fit:cover}
+
+.top-btn{
+display:block;
+background:#1e90ff;
